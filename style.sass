@@ -1,0 +1,133 @@
+
+$font: 'Open Sans', sans-serif
+$form-max-width: 33%
+$theme: #ffb142
+$main-bdr-rad: 5px
+
+*
+  margin: 0px
+  padding: 0px
+  box-sizing: border-box
+  font-family: $font 
+
+
+#main-app
+  height: 100vh
+  width: 100%
+  overflow: hidden
+  
+  #site-title
+    width: 100%
+    padding-left: 0.5*$form-max-width
+    height: 10vh
+    background: black
+    display: flex 
+    align-items: center
+
+    h1 
+      color: $theme
+    
+  #main-screen
+    height: 85vh
+    display: flex
+    flex-direction: column 
+    align-items: center
+    justify-content: center
+
+    $form-width: 750px
+    $search-width: 0.8*$form-width
+    $padding: 0.1*$form-width
+    
+    #main-form
+      width: $form-width
+      height: 300px
+      margin-bottom: 50px
+      padding: $padding
+      border-radius: $main-bdr-rad
+      background-color: $theme
+      display: flex
+      flex-direction: column 
+      align-items: center
+      justify-content: center
+
+      .title
+        width: 100%
+        margin-bottom: 20px
+        h2 
+
+      .drop-down
+        width: $search-width
+        border-radius: $main-bdr-rad
+        height: 36px
+        margin-bottom: 10px
+        cursor: text
+        padding: 0 0.4em
+        font-size: 18px
+
+
+  #output-wrap
+    position: absolute
+    top: 15vh
+    width: 100%
+    display: none
+    justify-content: center 
+    padding: 0 0.2em
+
+    &.show 
+      display: flex
+
+    #output
+      width: 300px
+      height: 120px
+      background-color: $theme
+      border-radius: $main-bdr-rad
+      font-size: 15px
+      display: flex
+      align-items: center 
+      justify-content: center
+
+    .output-title 
+      position: absolute 
+      top: 0
+      font-size: 20px
+      font-weight: bold
+    
+
+    
+
+
+  // keep footer always at 5vh from the bottom of the page
+  #footer
+    width: 100%
+    position: fixed
+    bottom: 5vh
+    text-align: center
+    font-size: 12px
+    opacity: 0.6
+  
+
+  .btn 
+    height: 37px
+    width: 100px
+    margin-top: 20px
+    border-radius: $main-bdr-rad
+    border: #487eb0 2px solid 
+    cursor: pointer
+    background-color: #487eb0
+    color: white
+    transition: all 150ms ease-in-out
+
+    &:hover
+      background-color: black
+
+
+/* Animations */
+
+
+
+
+
+/* Responsive Design */
+
+
+  
