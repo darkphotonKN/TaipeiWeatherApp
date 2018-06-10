@@ -20,15 +20,21 @@
 
         <div id="main-screen">
 
-            <form id="main-form" type="submit">
+            <form class="main-form" type="submit">
                 <div class="title"><h2>Select Your City</h2></div>
-                <select class="drop-down">
+                <select class="input">
                     <option value="Taipei">Taipei</option>
                     <option value="Taitung">Taitung</option>
                     <option value="Taichung">Taichung</option>
                     <option value="Keelung">Keelung</option>
                 </select>
-                <button type="submit" class="btn">submit</button>
+                <button type="submit" class="btn">Show Weather</button>
+            </form>
+
+            <form class="main-form" type="submit">
+                <div class="title"><h2>Enter Your City</h2></div>
+                <input type="text" placeholder="Enter City Name..." class="input">
+                <button type="submit" class="btn">Show Weather</button>
             </form>
 
             
@@ -37,7 +43,7 @@
         </div>    
     
         <div id="output-wrap">
-            <div class="output-title">Placeholder</div>
+            <div class="output-title">City</div>
             <div id="output"></div>
         </div>
         <div id="footer">&copy; Taiwan Weather App 2018</div>

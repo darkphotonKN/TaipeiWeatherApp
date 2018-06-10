@@ -2,21 +2,39 @@
 
 /* Taipei Weather Application */
 
-const mainForm = document.getElementById('main-form');
-const selection = document.querySelector('.drop-down');
+const mainForm = document.querySelector('.main-form');
+const selection = document.querySelector('select.input');
+const input = document.querySelector('input.input');
 const dataDelayTime = 200;
 
 
-mainForm.addEventListener('submit', e => {
-    // prevent form submission
-    e.preventDefault();
+const mainScreen = document.getElementById('main-screen');
+let forms = mainScreen.getElementsByTagName("form");
 
-    // let data load before displaying on DOM
-    const outputArea = document.getElementById("output-wrap");
-    setTimeout(() => outputArea.classList.add("show"), dataDelayTime);
+for(let i=0; i<forms.length; i++) {
 
-    weatherData(selection.value, "main", "temp");
-});
+    forms[i].addEventListener('submit', e => {
+        // prevent form submission
+        e.preventDefault();
+
+        // let data load before displaying on DOM
+        const outputArea = document.getElementById('output-wrap');
+        setTimeout(() => outputArea.classList.add('show'), dataDelayTime);
+
+        // if user has not put specific input value use drop down
+        if(input.value === "") {
+            weatherData(selection.value, "main", "temp");
+        } 
+        // if user has entered city name in input prioritize that
+        else {
+            weatherData(input.value, "main", "temp");
+        }
+    });
+
+}
+
+
+
 
 
 
@@ -36,8 +54,9 @@ function weatherData(cityName, property, subProperty) {
     const output = document.getElementById("output");
     const outputTitle = document.querySelector("#output-wrap .output-title");
     setTimeout(() => {
-        output.innerHTML = results+"&#8451"
+        output.innerHTML = results+"&#8451";
         outputTitle.innerHTML = cityName + " Temperature";
-    }, dataDelayTime);    
+    }, dataDelayTime); 
+
 
 }
