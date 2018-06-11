@@ -41,7 +41,6 @@ $main-bdr-rad: 5px
     .main-form
       width: $form-width
       height: 300px
-      margin-bottom: 50px
       padding: $padding
       border-radius: $main-bdr-rad
       background-color: $theme
@@ -54,6 +53,7 @@ $main-bdr-rad: 5px
         width: 100%
         margin-bottom: 20px
         h2 
+          font-size: 20px
 
       .input
         width: $search-width
@@ -62,8 +62,29 @@ $main-bdr-rad: 5px
         margin-bottom: 10px
         cursor: text
         padding: 0 0.4em
-        font-size: 18px
+        font-size: 15px
 
+
+      
+      #sort-options
+        padding: 0.5em 0
+        
+        label, input
+          margin-right: 5px
+
+
+      #form-submit-btn
+        position: absolute 
+        bottom: 8vh
+    
+    #separator
+      width: 100%
+      height: 4vh
+      font-weight: bold 
+      display: flex
+      align-items: center
+      justify-content: center
+      
 
   #output-wrap
     position: absolute
@@ -107,7 +128,7 @@ $main-bdr-rad: 5px
 
   .btn 
     height: 37px
-    width: 100px
+    width: 120px
     margin-top: 20px
     border-radius: $main-bdr-rad
     border: #487eb0 2px solid 

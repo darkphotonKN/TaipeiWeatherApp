@@ -28,16 +28,17 @@
                     <option value="Taichung">Taichung</option>
                     <option value="Keelung">Keelung</option>
                 </select>
-                <button type="submit" class="btn">Show Weather</button>
-            </form>
+                <button type="submit" class="btn" id="form-submit-btn">Show Weather</button>
 
-            <form class="main-form" type="submit">
-                <div class="title"><h2>Enter Your City</h2></div>
+                <div class="title"><h2>Search Advanced</h2></div>
+                <div id="sort-options">
+                    <input id="adv-temp" class="sort" type="radio" value="temp"><label>Temperature</label>
+                    <input id="adv-humid" class="sort" type="radio" value="humidity"><label>Humidity</label>
+                    <input id="adv-max-temp" class="sort" type="radio" value="temp_max"><label>Max Temp</label>
+                    <input id="adv-min-temp" class="sort" type="radio" value="temp_min"><label>Min Temp</label>
+                </div>
                 <input type="text" placeholder="Enter City Name..." class="input">
-                <button type="submit" class="btn">Show Weather</button>
             </form>
-
-            
 
             
         </div>    
@@ -46,7 +47,7 @@
             <div class="output-title">City</div>
             <div id="output"></div>
         </div>
-        <div id="footer">&copy; Taiwan Weather App 2018</div>
+        <div id="footer">&copy; Taiwan Weather App 20018</div>
     </div>
 
     <script type="text/javascript" src="script.js"></script>

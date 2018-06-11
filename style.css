@@ -26,7 +26,6 @@
     #main-app #main-screen .main-form {
       width: 750px;
       height: 300px;
-      margin-bottom: 50px;
       padding: 75px;
       border-radius: 5px;
       background-color: #34ace0;
@@ -37,6 +36,8 @@
       #main-app #main-screen .main-form .title {
         width: 100%;
         margin-bottom: 20px; }
+        #main-app #main-screen .main-form .title h2 {
+          font-size: 20px; }
       #main-app #main-screen .main-form .input {
         width: 450px;
         border-radius: 5px;
@@ -44,7 +45,21 @@
         margin-bottom: 10px;
         cursor: text;
         padding: 0 0.4em;
-        font-size: 18px; }
+        font-size: 15px; }
+      #main-app #main-screen .main-form #sort-options {
+        padding: 0.5em 0; }
+        #main-app #main-screen .main-form #sort-options label, #main-app #main-screen .main-form #sort-options input {
+          margin-right: 5px; }
+      #main-app #main-screen .main-form #form-submit-btn {
+        position: absolute;
+        bottom: 8vh; }
+    #main-app #main-screen #separator {
+      width: 100%;
+      height: 4vh;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
   #main-app #output-wrap {
     position: absolute;
     top: 15vh;
@@ -76,7 +91,7 @@
     opacity: 0.6; }
   #main-app .btn {
     height: 37px;
-    width: 100px;
+    width: 120px;
     margin-top: 20px;
     border-radius: 5px;
     border: #487eb0 2px solid;
