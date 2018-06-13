@@ -11,23 +11,25 @@ const searchForm = document.querySelector('#main-screen .main-form');
 
 let results = ""; // result of weather api data 
 
+
+
 // event listener for weather search form submit 
 searchForm.addEventListener('submit', e => {
     // prevent default form submission page refresh
     e.preventDefault();
 
+    // var selectors 
+    const outputArea = document.getElementById('output-wrap'); // output box
+    const output = document.getElementById("output"); // data output location 
+    const outputTitle = document.querySelector("#output-wrap .output-title"); // output title
 
     // let data load before displaying on DOM
-    const outputArea = document.getElementById('output-wrap');
-    setTimeout(() => outputArea.classList.add('show'), dataDelayTime+200);
+    outputArea.classList.add('show');
 
     // if user has not put specific input value use drop down
     if(input.value === "") {
         weatherData(selection.value, "main", "temp");
 
-        // display at output of DOM
-        const output = document.getElementById("output");
-        setTimeout(() => output.innerHTML += results+"&#8451", dataDelayTime); 
     } 
     // if user has entered city name in input prioritize that
     else {
@@ -50,27 +52,30 @@ searchForm.addEventListener('submit', e => {
         }
 
         // display the information 
+        let dispInfo = "";
+        let baseDelay = 100;
+        let dispDelay = 0;
+        let dispInterval = 150;
+        let loadTime = 1000;
         for(let i=0; i<displayInfo.length; i++) {
             setTimeout(() => {
                 //console.log(`displaying info for ${displayInfo[i]}`);
-                weatherData(input.value, "main", displayInfo[i]);
-
-                
-                const output = document.getElementById("output");
-                const outputTitle = document.querySelector("#output-wrap .output-title");
+                 weatherData(input.value, "main", displayInfo[i]);
 
                 // display at output of DOM
-                output.innerHTML += results+"&#8451 ";
-                outputTitle.innerHTML = `${input.value} Weather Information`;
+                setTimeout(()=> {
+                    console.log(results); // test 
+                    dispInfo += results+"&#8451 ";
+                    outputTitle.innerHTML = `${input.value} Weather Information`;
+                    dispDelay += (i*dispInterval);
+                }, 200);
 
-            }, 200+(i*1000));
+            }, baseDelay+(i*dispInterval));
         }
+        setTimeout(() => output.innerHTML = dispInfo, (baseDelay+dispDelay+loadTime));
             
     }
 });
-
-
-
 
 
 
@@ -83,6 +88,9 @@ function weatherData(cityName, property, subProperty) {
     .then(result => result.json())
     .then(data => { 
         results = data[property][subProperty];
+        const output = document.getElementById("output");
+        output.innerHTML = `.then loaded already ${results}`;
+        
     });                                    
 
     // return results
